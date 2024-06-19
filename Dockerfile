@@ -10,8 +10,9 @@ WORKDIR /usr/src/app
 
 COPY Gemfile Gemfile.lock ./
 RUN apt-get
-RUN bundle install
+
 RUN apt-get update && apt-get install -y build-essential libc6-dev libffi-dev zlib1g-dev
+RUN bundle install
 
 COPY . .
 
